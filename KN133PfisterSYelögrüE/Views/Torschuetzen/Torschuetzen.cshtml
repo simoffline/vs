@@ -1,0 +1,23 @@
+﻿
+@using KN133PfisterSYelögrüE.Models
+@model List<Torschuetzen>
+
+@{
+    ViewBag.Title = "Torschuetzen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Torschützen</h2>
+<br />
+
+@foreach (var item in Model)
+{
+    <th>@item.Name</th> <br />
+    <th>@item.AnzTore</th> <br /> <br />
+}
+
+
+
+<asp:DropDownList ID="ddlCustomers" runat="server">
+</asp:DropDownList>
+

@@ -1,0 +1,40 @@
+﻿@using KN133PfisterSYelögrüE.Models
+@model List<Spielresultat>
+@{
+    ViewBag.Title = "SpielresultateEingebenView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+table, th, td
+{
+    border: 1px solid black;
+    padding:10px;
+}
+
+
+</style>
+<h2>SpielresultateEingebenView</h2>
+<form action="~/Eingeben/Eingeben" method="post">
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Heimteam</th>
+            <th>Auswaertsteam</th>
+            <th>Datum</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><input type="submit" name=btn value=@item.id></td>
+                <td>@item.Heimteam</td>
+                <td>@item.Auswaertsteam</td>
+                <td>@item.Datum</td>
+
+            </tr>
+        }
+    </table>
+</form>
+<asp:DropDownList ID="ddlGender" runat="server" Width="160px" AutoPostBack="True" OnDataBound="ddlGender_DataBound">
+</asp:DropDownList>
